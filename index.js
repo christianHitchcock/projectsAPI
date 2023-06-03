@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3030;
 
 const app = express();
 
@@ -52,7 +53,9 @@ app.get("/projects",async(req,res)=>{
     }
     
   });
-app.listen(3000, function() {
-    console.log("Server started on port 3000");
-  });
+
+
   
+  app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });
